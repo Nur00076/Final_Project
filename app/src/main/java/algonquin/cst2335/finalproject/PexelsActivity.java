@@ -1,6 +1,8 @@
 package algonquin.cst2335.finalproject;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,7 +26,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.squareup.picasso.Picasso;
+import com.bumptech.glide.Glide;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -82,8 +85,20 @@ public class PexelsActivity extends AppCompatActivity {
                 startActivity(savedImgPage);
                 break;
 
+
             case R.id.about:
                 Toast.makeText(this, "Ekon Hashi, CST2335 Final Project:Pexels", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.help:
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                String step1 = "1. Enter your search query and click the search button to find images";
+                String step2 = "2. Click on an image to see more details and save to your device";
+                builder.setMessage(step1 + "\n\n" + step2)
+                        .setTitle("How to use:")
+                        .setNegativeButton("Close", (dialog, cl) -> { })
+                        .create()
+                        .show();
                 break;
 
         }
@@ -91,12 +106,17 @@ public class PexelsActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
     /**
      * @param savedInstanceState
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        SharedPreferences prefs = getSharedPreferences("MyData", Context.MODE_PRIVATE);
+        searchQuery = prefs.getString("Search", "");
+
         super.onCreate(savedInstanceState);
+        SharedPreferences.Editor editor = prefs.edit();
 
         queue = Volley.newRequestQueue(this);
         binding = PexelsActivityBinding.inflate(getLayoutInflater());
@@ -114,6 +134,8 @@ public class PexelsActivity extends AppCompatActivity {
             pexelsResults.clear();
             adapter.notifyDataSetChanged();
             searchQuery = binding.searchText.getText().toString();
+            editor.putString("Search", searchQuery);
+            editor.apply();
             String url = "https://api.pexels.com/v1/search/?per_page=80&query=" + URLEncoder.encode(searchQuery);
             getSearchResults(url);
         });
@@ -142,7 +164,8 @@ public class PexelsActivity extends AppCompatActivity {
             public void onBindViewHolder(@NonNull RecyclerViewHolder holder, int position) {
                 PexelsModel img = pexelsResults.get(position);
                 holder.photographer.setText(img.getPhotographer());
-                Picasso.get().load(img.getImgThumbnail()).into(holder.thumbnail);
+                Glide.with(getApplicationContext()).load(img.getImgThumbnail()).into(holder.thumbnail);
+
             }
 
             /**
