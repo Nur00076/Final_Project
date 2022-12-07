@@ -31,7 +31,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
-                android:hint="@string/enter_search_here"
+                android:hint="@string/enter_search"
                 android:autofillHints=""
                 android:inputType="textAutoCorrect"
                 app:layout_constraintEnd_toStartOf="@+id/button"

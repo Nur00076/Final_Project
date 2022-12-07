@@ -3,8 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -17,23 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalGroupProjectApplication"
         tools:targetApi="31">
-        <activity
-            android:name="View.MovieLib"
-            android:configChanges="keyboardHidden|orientation|screenSize"
-            android:exported="true">
-
-        </activity>
 
         <activity
-            android:name="View.SearchMovie"
-            android:name="PexelsSavedActivity"
-            android:exported="false">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".PexelsActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -45,6 +29,30 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+
+        <activity
+            android:name="View.MovieLib"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true">
+
+        </activity>
+
+        <activity
+            android:name="PexelsSavedActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <activity
+            android:name="View.SearchMovie"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
 
     </application>
 

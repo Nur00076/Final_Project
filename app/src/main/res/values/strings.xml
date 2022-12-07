@@ -39,13 +39,11 @@
     <string name="cast">The Cast: </string>
     <string name="plot">The Plot: </string>
 
-    <string name="about">About</string>
+    <string name="aboutProj">About</string>
 
-
-    <string name="app_name">Final Project</string>
-    <string name="enter_search_here">Enter Search Here</string>
-    <string name="search">Search</string>
-    <string name="save">Save</string>
+    <string name="enter_search">Enter Search Here</string>
+    <string name="searchImg">Search</string>
+    <string name="saveImg">Save</string>
     <string name="image_thumbnail">Image thumbnail</string>
     <string name="saved_images">Saved Images</string>
     <string name="about">About</string>
