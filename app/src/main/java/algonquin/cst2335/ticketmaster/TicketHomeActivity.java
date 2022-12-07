@@ -8,7 +8,7 @@ import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
 
-import algonquin.cst2335.ticketmaster.databinding.ActivityTickethomeBinding;
+import algonquin.cst2335.finalproject.databinding.ActivityTickethomeBinding;
 
 /**
  * @author kamelia

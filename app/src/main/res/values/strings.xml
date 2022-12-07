@@ -25,9 +25,9 @@
 
     <string name="author">Author:</string>
 
-    <string name="save">save</string>
-    <string name="remove">remove</string>
-    <string name="search">search</string>
+    <string name="save_movie">save</string>
+    <string name="remove_movie">remove</string>
+    <string name="searchMovie">search</string>
 
     <string name="MovieMainPageHeader">Welcome to \nMovie Information App </string>
     <string name="MovieSearch">Search</string>
@@ -75,7 +75,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="undo">Undo</string>
-    <string name="app_name">CST2335 Ticket Master Project</string>
+    <string name="page_name">CST2335 Ticket Master Project</string>
     <string name="drawer_open">Drawer Open</string>
     <string name="drawer_close">Drawer Close</string>
     <string name="time">time</string>

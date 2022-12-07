@@ -1,19 +1,8 @@
 package algonquin.cst2335.ticketmaster.ui;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
-
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
@@ -25,6 +14,16 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -47,12 +46,12 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicReference;
 
-import algonquin.cst2335.ticketmaster.R;
+import algonquin.cst2335.finalproject.R;
+import algonquin.cst2335.finalproject.databinding.ActivityTicketMasterBinding;
+import algonquin.cst2335.finalproject.databinding.EventBinding;
 import algonquin.cst2335.ticketmaster.data.Event;
 import algonquin.cst2335.ticketmaster.data.EventDAO;
 import algonquin.cst2335.ticketmaster.data.EventDatabase;
-import algonquin.cst2335.ticketmaster.databinding.ActivityTicketMasterBinding;
-import algonquin.cst2335.ticketmaster.databinding.EventBinding;
 
 
 /**
@@ -402,7 +401,7 @@ public class TicketMasterActivity extends AppCompatActivity {
             super(itemView);
 
             itemView.setOnClickListener(click -> {
-                int position = getAbsoluteAdapterPosition();
+                int position = getAdapterPosition();
                 Event selected = eventsList.get(position);
                 eventModel.selectedEvent.postValue(selected);
             });

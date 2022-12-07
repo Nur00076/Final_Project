@@ -24,8 +24,6 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
 import com.android.volley.RequestQueue;
@@ -43,11 +41,11 @@ import java.util.TimeZone;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 
-import algonquin.cst2335.ticketmaster.R;
+import algonquin.cst2335.finalproject.R;
+import algonquin.cst2335.finalproject.databinding.EventDetailsBinding;
 import algonquin.cst2335.ticketmaster.data.Event;
 import algonquin.cst2335.ticketmaster.data.EventDAO;
 import algonquin.cst2335.ticketmaster.data.EventDatabase;
-import algonquin.cst2335.ticketmaster.databinding.EventDetailsBinding;
 
 public class EventDetailsFragment extends Fragment {
 

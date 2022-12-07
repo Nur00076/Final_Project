@@ -2,7 +2,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.FinalGroupProjectApplication" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-    <style name="Theme.TicketMaster" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/white</item>
         <item name="colorPrimaryVariant">@color/white</item>
@@ -18,13 +17,13 @@
         <item name="alertDialogTheme">@style/AlertDialogTheme</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+<!--        <item name="android:statusBarColor1" tools:targetApi="l">?attr/colorPrimary</item>-->
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
 
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+       <!-- <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>-->
     </style>
     <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="colorPrimary">@color/black</item>

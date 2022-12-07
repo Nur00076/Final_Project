@@ -1,5 +1,10 @@
 package algonquin.cst2335.ticketmaster;
 
+import android.content.Intent;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.FrameLayout;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,13 +12,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import android.content.Intent;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.FrameLayout;
-
 import com.google.android.material.navigation.NavigationView;
 
+import algonquin.cst2335.finalproject.R;
 import algonquin.cst2335.ticketmaster.ui.TicketMasterActivity;
 
 /**
@@ -78,6 +79,5 @@ public class NavigationDrawer extends AppCompatActivity implements NavigationVie
             getSupportActionBar().setTitle(titleString);
         }
     }
-
 
 }
